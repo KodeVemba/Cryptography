@@ -1,6 +1,7 @@
 import modules.hash
 from modules.encryption import aes_ed, rsa_ed
 from modules.password import check_stregth, hash_pw, verify_pw
+import getpass
 
 
 def menu():
@@ -17,7 +18,7 @@ print("Welcome to the Cryptography toolkit")
 
 while True:
     menu()
-    choice = input()
+    choice = int(input(" Choose your aciton "))
     if choice == 0:
         break
     elif choice == 1:
@@ -34,7 +35,7 @@ while True:
         print(f"Here is the encryption of your file {rsa_ed(message)}")
     elif choice == 5:
         while True:
-            password = input("create a password?")
+            password = getpass("create a password?")
             response = check_stregth(password)
             if response.startswith("stron"):
                 break
