@@ -19,7 +19,7 @@ def check_stregth(password):
     elif score == 3:
         response = "strong enough password"
     elif score > 3:
-        response = "Very strong password"
+        response = " strong password"
 
     return response
 
@@ -44,4 +44,4 @@ if __name__ == "__main__":
             print("Choose a stronger password")
         else:
             break
-    hash_pw(password1)
+    hashed_password = hash_pw(password1)
